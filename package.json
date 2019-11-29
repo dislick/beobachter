@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.19.0",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,ts,jsx,tsx,json,html,md,gql,graphql,yml,css,less,scss}\""
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "watchers": [
+    {
+      "name": "vscode-github-stargazers",
+      "description": "I am very much aware that GitHub has an API, this is just for test purposes.",
+      "url": "https://github.com/microsoft/vscode/stargazers",
+      "fn": "return parseInt(document.querySelector('#repos .Counter').innerText.replace(',', ''))"
+    }
+  ]
+}

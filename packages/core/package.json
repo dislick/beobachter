@@ -1,0 +1,20 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "description": "Core of wetcher",
+  "author": "Patrick Muff <muff.pa@gmail.com>",
+  "homepage": "https://github.com/dislick/wetcher#readme",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "scripts": {
+    "start": "ts-node src/main.ts"
+  },
+  "dependencies": {
+    "@types/puppeteer": "^2.0.0",
+    "puppeteer": "^2.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.2"
+  }
+}
