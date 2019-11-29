@@ -7,7 +7,7 @@ const config = require(join(__dirname, '../config.json'));
 async function bootstrap() {
   const browser = await puppeteer.launch();
 
-  for (const task of config.watchers) {
+  for (const task of config.tasks) {
     const value = await scrapeWebsite(browser, task.url, task.fn);
     console.log(`[${task.name}] ${value}`);
   }

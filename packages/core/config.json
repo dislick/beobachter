@@ -1,5 +1,5 @@
 {
-  "watchers": [
+  "tasks": [
     {
       "name": "vscode-github-stargazers",
       "description": "I am very much aware that GitHub has an API, this is just for test purposes.",
