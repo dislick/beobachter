@@ -8,11 +8,11 @@ async function bootstrap() {
   const browser = await puppeteer.launch();
 
   for (const task of config.tasks) {
-    const value = await scrapeWebsite(browser, task.url, task.fn);
-    console.log(`[${task.name}] ${value}`);
+    setInterval(async () => {
+      const value = await scrapeWebsite(browser, task.url, task.fn);
+      console.log(`[${task.name}] ${value}`);
+    }, task.interval * 1000);
   }
-
-  await browser.close();
 }
 
 bootstrap();

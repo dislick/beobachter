@@ -12,5 +12,7 @@ export async function scrapeWebsite<T>(
   const fn = Function(fnString) as () => T;
   const value = await page.evaluate(fn);
 
+  await page.close();
+
   return value;
 }
