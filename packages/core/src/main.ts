@@ -10,7 +10,7 @@ async function bootstrap() {
   for (const task of config.tasks) {
     setInterval(async () => {
       const value = await scrapeWebsite(browser, task.url, task.fn);
-      console.log(`[${task.name}] ${value}`);
+      console.log(`[${Date.now()}] [${task.name}] ${value}`);
     }, task.interval * 1000);
   }
 }
