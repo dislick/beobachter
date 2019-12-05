@@ -1,4 +1,4 @@
-# Wetcher
+# Wetcher 👀
 
 > Early alpha! Everything is subject to change.
 
