@@ -1,0 +1,15 @@
+{
+  "name": "@wetcher/adapter",
+  "version": "0.0.1",
+  "description": "Abstract adapter definition",
+  "author": "Patrick Muff <muff.pa@gmail.com>",
+  "homepage": "https://github.com/dislick/wetcher#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
+}

@@ -1,6 +1,7 @@
 import { join } from 'path';
 import puppeteer from 'puppeteer';
 import { scrapeWebsite } from './scrape_website';
+import { AdapterConsole } from '@wetcher/adapter-console';
 
 const config = require(join(__dirname, '../config.json'));
 
@@ -10,7 +11,7 @@ async function bootstrap() {
   for (const task of config.tasks) {
     setInterval(async () => {
       const value = await scrapeWebsite(browser, task.url, task.fn);
-      console.log(`[${Date.now()}] [${task.name}] ${value}`);
+      AdapterConsole.record(value);
     }, task.interval * 1000);
   }
 }

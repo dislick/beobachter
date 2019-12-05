@@ -1,0 +1,18 @@
+{
+  "name": "@wetcher/adapter-console",
+  "version": "0.0.1",
+  "description": "Adapter which records values to stdout",
+  "author": "Patrick Muff <muff.pa@gmail.com>",
+  "homepage": "https://github.com/dislick/wetcher#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@wetcher/adapter": "^0.0.1"
+  }
+}

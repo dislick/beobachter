@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@wetcher/core",
   "version": "0.0.1",
   "description": "Core of wetcher",
   "author": "Patrick Muff <muff.pa@gmail.com>",
@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@types/puppeteer": "^2.0.0",
+    "@wetcher/adapter": "^0.0.1",
+    "@wetcher/adapter-console": "^0.0.1",
     "puppeteer": "^2.0.0"
   },
   "devDependencies": {
