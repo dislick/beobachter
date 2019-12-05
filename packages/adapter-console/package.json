@@ -13,6 +13,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "@wetcher/adapter": "^0.0.1"
+    "@wetcher/adapter": "^0.0.1",
+    "colors": "^1.4.0"
   }
 }

@@ -2,8 +2,16 @@ import { join } from 'path';
 import puppeteer from 'puppeteer';
 import { scrapeWebsite } from './scrape_website';
 import { AdapterConsole } from '@wetcher/adapter-console';
+import { Adapter, Task } from '@wetcher/adapter';
 
-const config = require(join(__dirname, '../config.json'));
+const config: {
+  adapters: any;
+  tasks: Task[];
+} = require(join(__dirname, '../config.json'));
+
+const adapters: Adapter[] = config.adapters.map((entry: any) => {
+  return new AdapterConsole(entry.options);
+});
 
 async function bootstrap() {
   const browser = await puppeteer.launch();
@@ -11,7 +19,10 @@ async function bootstrap() {
   for (const task of config.tasks) {
     setInterval(async () => {
       const value = await scrapeWebsite(browser, task.url, task.fn);
-      AdapterConsole.record(value);
+
+      for (const adapter of adapters) {
+        adapter.record(task, value);
+      }
     }, task.interval * 1000);
   }
 }
