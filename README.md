@@ -4,7 +4,7 @@
 
 ## About
 
-This tool takes a link to a web page and a JavaScript function. It then periodically downloads the web page, runs the function on it and stores its result in a time-series database. This enables you to create graphs and alerts on that data using another tool like Grafana.
+This lightweight Node.js service takes a link to a web page and a JavaScript function. It then periodically downloads the web page, runs the function on it and stores its result in a time-series database. This enables you to create graphs and alerts on that data using another tool like Grafana.
 
 ## Use Cases
 
