@@ -23,16 +23,43 @@ Adapters are required to record values. The following adapters are planned:
 
 ### Configuration
 
+There are multiple ways of configuring Wetcher.
+
+1. `config.json` in the same directory
+2. Environment variable `WETCHER_CONFIG` set to the absolute path of your `config.json`
+
+#### Adapters
+
+Wetcher needs you to configure at least one adapter. Specify its `name` and `config` which you will find at `packages/adapter-*` in this repository.
+
 ```json
 {
-  "adapters": [{ "name": "adapter-console", "options": { "colors": true } }],
+  "adapters": [
+    {
+      "name": "adapter-console",
+      "config": {
+        "colors": true
+      }
+    }
+  ]
+}
+```
+
+#### Tasks
+
+Tasks tell Wetcher what it needs to do. You can specify any number of tasks. All properties are mandatory.
+
+> You must not use spaces in `name`. This constraint allows adapters to record data more predictably.
+
+```jsonc
+{
   "tasks": [
     {
-      "name": "vscode-github-stargazers",
+      "name": "github-vscode-stargazers",
       "description": "Not very useful because there is an official API available, but good enough for testing",
       "url": "https://github.com/microsoft/vscode/stargazers",
       "fn": "return parseInt(document.querySelector('#repos .Counter').innerText.replace(',', ''))",
-      "interval": 3
+      "interval": 60 // seconds
     }
   ]
 }
