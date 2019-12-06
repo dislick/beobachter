@@ -16,10 +16,10 @@ This tool takes a link to a web page and a JavaScript function. It then periodic
 
 ### Adapters
 
-Adapters are required to record values. The following adapters are planned:
+Adapters are required to record values. The following adapters are available/planned:
 
-- `adapter-console` Logs to standard output
-- `adapter-influxdb` Stores values in InfluxDB
+- `adapter-console` Logs to standard output `[available]`
+- `adapter-influxdb` Stores values in InfluxDB `[planned]`
 
 ### Configuration
 
