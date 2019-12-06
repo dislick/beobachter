@@ -18,15 +18,15 @@ This tool takes a link to a web page and a JavaScript function. It then periodic
 
 Adapters are required to record values. The following adapters are available/planned:
 
-- `adapter-console` Logs to standard output `[available]`
-- `adapter-influxdb` Stores values in InfluxDB `[planned]`
+- `adapter-console` Logs to standard output. `[available]`
+- `adapter-influxdb` Stores values in InfluxDB. `[planned]`
 
 ### Configuration
 
 There are multiple ways of configuring Wetcher.
 
-1. `config.json` in the same directory
-2. Environment variable `WETCHER_CONFIG` set to the absolute path of your `config.json`
+1. `config.json` in the same directory.
+2. Environment variable `WETCHER_CONFIG` set to the absolute path of your `config.json`.
 
 #### Adapters
 
