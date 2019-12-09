@@ -8,9 +8,21 @@ interface Options {
 export class AdapterConsole extends Adapter<Options> {
   async record(task: Task, value: any) {
     if (this.options.colors) {
-      console.log(`[${task.name}]`.cyan, `[${task.interval}s]`.grey, value);
+      console.log(
+        this.tag(task.name).cyan,
+        this.tag(task.interval + 's').grey,
+        value
+      );
     } else {
-      console.log(`[${task.name}]`, `[${task.interval}s]`, value);
+      console.log(
+        this.tag(task.name).reset,
+        this.tag(task.interval + 's').reset,
+        value.toString().reset
+      );
     }
+  }
+
+  private tag(title: string): string {
+    return '[' + title + ']';
   }
 }

@@ -1,5 +1,5 @@
 {
-  "adapters": [{ "name": "adapter-console", "options": { "colors": true } }],
+  "adapters": [{ "name": "adapter-console", "options": { "colors": false } }],
   "tasks": [
     {
       "name": "vscode-github-stargazers",
