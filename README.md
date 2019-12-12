@@ -47,7 +47,11 @@ Wetcher needs you to configure at least one adapter. Specify its `name` and `con
 
 #### Tasks
 
-Tasks tell Wetcher what it needs to do. You can specify any number of tasks. All properties are mandatory.
+Tasks tell Wetcher what it needs to do. You can specify any number of tasks. There are different types of tasks:
+
+- `browser`
+- `http-json`
+- `http-text`
 
 > You must not use spaces in `name`. This constraint allows adapters to record data more predictably.
 
@@ -55,10 +59,19 @@ Tasks tell Wetcher what it needs to do. You can specify any number of tasks. All
 {
   "tasks": [
     {
-      "name": "github-vscode-stargazers",
-      "description": "Not very useful because there is an official API available, but good enough for testing",
+      "type": "browser",
+      "name": "github-vscode-stargazers-browser",
+      "description": "",
       "url": "https://github.com/microsoft/vscode/stargazers",
       "fn": "return parseInt(document.querySelector('#repos .Counter').innerText.replace(',', ''))",
+      "interval": 60 // seconds
+    },
+    {
+      "type": "http-json",
+      "name": "github-vscode-stargazers-json",
+      "description": "",
+      "url": "https://api.github.com/repos/microsoft/vscode",
+      "path": "stargazers_count",
       "interval": 60 // seconds
     }
   ]
