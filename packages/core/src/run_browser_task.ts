@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import { adapters } from './main';
 import { scrapeWebsite } from './scrape_website';
 import { waitForSeconds } from './utils/wait';
-import { BrowserTask } from '@wetcher/adapter';
+import { BrowserTask } from '@beobachter/adapter';
 
 export async function runBrowserTasks(tasks: BrowserTask[]) {
   const browser = await puppeteer.launch();

@@ -1,4 +1,4 @@
-import { Adapter, Task } from '@wetcher/adapter';
+import { Adapter, Task } from '@beobachter/adapter';
 import 'colors';
 import { formatISO } from 'date-fns';
 

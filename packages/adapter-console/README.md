@@ -1,4 +1,4 @@
-# @wetcher/adapter-console
+# @beobachter/adapter-console
 
 Simple adapter which outputs recorded values to stdout.
 

@@ -1,3 +1,3 @@
-# @wetcher/adapter
+# @beobachter/adapter
 
 Abstract adapter implementation.

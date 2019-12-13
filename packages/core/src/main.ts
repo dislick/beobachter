@@ -1,6 +1,11 @@
 import { join } from 'path';
-import { AdapterConsole } from '@wetcher/adapter-console';
-import { Adapter, Task, isBrowserTask, isHttpJsonTask } from '@wetcher/adapter';
+import { AdapterConsole } from '@beobachter/adapter-console';
+import {
+  Adapter,
+  Task,
+  isBrowserTask,
+  isHttpJsonTask,
+} from '@beobachter/adapter';
 import { runBrowserTasks } from './run_browser_task';
 import { runHttpJsonTasks } from './run_http-json_task';
 

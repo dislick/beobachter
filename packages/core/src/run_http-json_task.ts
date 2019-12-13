@@ -1,4 +1,4 @@
-import { HttpJsonTask } from '@wetcher/adapter';
+import { HttpJsonTask } from '@beobachter/adapter';
 import { get } from 'lodash';
 import request from 'request-promise-native';
 import { adapters } from './main';
@@ -10,7 +10,7 @@ export async function runHttpJsonTasks(tasks: HttpJsonTask[]) {
       try {
         const response = await request.get(task.url, {
           headers: {
-            'User-Agent': 'wetcher',
+            'User-Agent': 'beobachter',
           },
           json: true,
         });

@@ -1,9 +1,9 @@
 {
-  "name": "@wetcher/core",
+  "name": "@beobachter/core",
   "version": "0.0.1",
-  "description": "Core of wetcher",
+  "description": "Core of beobachter",
   "author": "Patrick Muff <muff.pa@gmail.com>",
-  "homepage": "https://github.com/dislick/wetcher#readme",
+  "homepage": "https://github.com/dislick/beobachter#readme",
   "license": "ISC",
   "main": "lib/core.js",
   "scripts": {
@@ -14,8 +14,8 @@
     "@types/puppeteer": "^2.0.0",
     "@types/request": "^2.48.3",
     "@types/request-promise-native": "^1.0.17",
-    "@wetcher/adapter": "^0.0.1",
-    "@wetcher/adapter-console": "^0.0.1",
+    "@beobachter/adapter": "^0.0.1",
+    "@beobachter/adapter-console": "^0.0.1",
     "lodash": "^4.17.15",
     "puppeteer": "^2.0.0",
     "request": "^2.88.0",
