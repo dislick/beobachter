@@ -10,10 +10,16 @@
     "start": "ts-node src/main.ts"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.149",
     "@types/puppeteer": "^2.0.0",
+    "@types/request": "^2.48.3",
+    "@types/request-promise-native": "^1.0.17",
     "@wetcher/adapter": "^0.0.1",
     "@wetcher/adapter-console": "^0.0.1",
-    "puppeteer": "^2.0.0"
+    "lodash": "^4.17.15",
+    "puppeteer": "^2.0.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
   },
   "devDependencies": {
     "ts-node": "^8.5.4",

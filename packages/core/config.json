@@ -1,11 +1,20 @@
 {
-  "adapters": [{ "name": "adapter-console", "options": { "colors": false } }],
+  "adapters": [{ "name": "adapter-console", "options": { "colors": true } }],
   "tasks": [
     {
-      "name": "vscode-github-stargazers",
-      "description": "Not very useful because there is an official API available, but good enough for testing",
+      "type": "browser",
+      "name": "github-vscode-stargazers-browser",
+      "description": "",
       "url": "https://github.com/microsoft/vscode/stargazers",
       "fn": "return parseInt(document.querySelector('#repos .Counter').innerText.replace(',', ''))",
+      "interval": 3
+    },
+    {
+      "type": "http-json",
+      "name": "github-vscode-stargazers-json",
+      "description": "",
+      "url": "https://api.github.com/repos/microsoft/vscode",
+      "path": "stargazers_count",
       "interval": 3
     }
   ]
