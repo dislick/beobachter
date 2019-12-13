@@ -9,6 +9,7 @@ const config: {
   tasks: Task[];
 } = require(join(__dirname, '../config.json'));
 
+// TODO: Properly set up adapters
 export const adapters: Adapter[] = config.adapters.map((entry: any) => {
   return new AdapterConsole(entry.options);
 });
