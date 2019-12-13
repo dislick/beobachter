@@ -4,7 +4,7 @@
 
 ## About
 
-This lightweight Node.js service performs highly configurable, periodic web scraping. Results can be stored in time-series databases for further analysis using visualization tools like [Grafana](https://grafana.com).
+This Node.js service performs highly configurable, periodic web scraping. Results can be stored in time-series databases for further analysis using visualization tools like [Grafana](https://grafana.com).
 
 ## Short Example
 
