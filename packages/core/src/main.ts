@@ -5,6 +5,7 @@ import { AdapterConsole } from '@wetcher/adapter-console';
 import { Adapter, Task } from '@wetcher/adapter';
 import request from 'request-promise-native';
 import { get } from 'lodash';
+import { waitForSeconds } from './utils/wait';
 
 const config: {
   adapters: any;
@@ -26,43 +27,53 @@ async function bootstrap() {
 async function runBrowserTasks(tasks: Task[]) {
   const browser = await puppeteer.launch();
 
-  for (const task of tasks) {
-    setInterval(async () => {
+  tasks.forEach(async task => {
+    while (true) {
       if (!task.fn) {
         throw new Error('You must provide property "fn" for a browser task');
       }
 
-      const value = await scrapeWebsite(browser, task.url, task.fn);
-
-      for (const adapter of adapters) {
-        adapter.record(task, value);
+      try {
+        const value = await scrapeWebsite(browser, task.url, task.fn);
+        for (const adapter of adapters) {
+          adapter.record(task, value);
+        }
+      } catch (error) {
+        console.log('error', error);
       }
-    }, task.interval * 1000);
-  }
+
+      await waitForSeconds(task.interval);
+    }
+  });
 }
 
 async function runHttpJsonTasks(tasks: Task[]) {
-  for (const task of tasks) {
-    setInterval(async () => {
+  tasks.forEach(async task => {
+    while (true) {
       if (!task.path) {
         throw new Error(
           'You must provide property "path" for a http-json task'
         );
       }
 
-      const response = await request.get(task.url, {
-        headers: {
-          'User-Agent': 'wetcher',
-        },
-        json: true,
-      });
-      const value = get(response, task.path);
-
-      for (const adapter of adapters) {
-        adapter.record(task, value);
+      try {
+        const response = await request.get(task.url, {
+          headers: {
+            'User-Agent': 'wetcher',
+          },
+          json: true,
+        });
+        const value = get(response, task.path);
+        for (const adapter of adapters) {
+          adapter.record(task, value);
+        }
+      } catch (error) {
+        console.log('Error in http-json task', error.message);
       }
-    }, task.interval * 1000);
-  }
+
+      await waitForSeconds(task.interval);
+    }
+  });
 }
 
 bootstrap();
