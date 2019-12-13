@@ -1,18 +1,12 @@
-import { Task } from '@wetcher/adapter';
-import request from 'request-promise-native';
+import { HttpJsonTask } from '@wetcher/adapter';
 import { get } from 'lodash';
-import { waitForSeconds } from './utils/wait';
+import request from 'request-promise-native';
 import { adapters } from './main';
+import { waitForSeconds } from './utils/wait';
 
-export async function runHttpJsonTasks(tasks: Task[]) {
+export async function runHttpJsonTasks(tasks: HttpJsonTask[]) {
   tasks.forEach(async task => {
     while (true) {
-      if (!task.path) {
-        throw new Error(
-          'You must provide property "path" for a http-json task'
-        );
-      }
-
       try {
         const response = await request.get(task.url, {
           headers: {

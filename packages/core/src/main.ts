@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { AdapterConsole } from '@wetcher/adapter-console';
-import { Adapter, Task } from '@wetcher/adapter';
+import { Adapter, Task, isBrowserTask, isHttpJsonTask } from '@wetcher/adapter';
 import { runBrowserTasks } from './run_browser_task';
 import { runHttpJsonTasks } from './run_http-json_task';
 
@@ -14,8 +14,8 @@ export const adapters: Adapter[] = config.adapters.map((entry: any) => {
 });
 
 async function bootstrap() {
-  const browserTasks = config.tasks.filter(task => task.type === 'browser');
-  const httpJsonTasks = config.tasks.filter(task => task.type === 'http-json');
+  const browserTasks = config.tasks.filter(isBrowserTask);
+  const httpJsonTasks = config.tasks.filter(isHttpJsonTask);
 
   runBrowserTasks(browserTasks);
   runHttpJsonTasks(httpJsonTasks);
