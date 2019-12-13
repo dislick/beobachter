@@ -1,11 +1,22 @@
-export interface Task {
+interface BaseTask {
   type: 'browser' | 'http-json' | 'http-text';
   name: string;
   description: string;
   url: string;
   interval: number;
-
-  fn?: string; // browser
-  path?: string; // http-json
-  regex?: string; // http-text
 }
+
+export interface BrowserTask extends BaseTask {
+  fn: string;
+}
+
+export interface HttpJsonTask extends BaseTask {
+  path: string;
+}
+
+export interface HttpTextTask extends BaseTask {
+  regex: string;
+}
+
+export type Task = Partial<BrowserTask & HttpJsonTask & HttpTextTask> &
+  Required<BaseTask>;
