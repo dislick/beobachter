@@ -11,10 +11,10 @@
     },
     {
       "type": "http-json",
-      "name": "github-vscode-stargazers-json",
+      "name": "jsonplaceholder-test",
       "description": "",
-      "url": "https://api.github.com/repos/microsoft/vscode",
-      "path": "stargazers_count",
+      "url": "https://jsonplaceholder.typicode.com/users/",
+      "path": "[0].company.bs",
       "interval": 3
     }
   ]
