@@ -1,6 +1,6 @@
 # Beobachter 👀
 
-> Early alpha! Everything is subject to change.
+> Early alpha! Everything is subject to change and certain features are not implemented yet.
 
 ## About
 
