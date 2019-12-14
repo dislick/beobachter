@@ -19,7 +19,7 @@ A configuration like this lets you download a certain web page every 60 seconds 
       "name": "digitec-amd-ryzen-9-3950x",
       "description": "Watches the prize of the new 16-core Ryzen 3950X",
       "url": "https://www.digitec.ch/de/s1/product/amd-ryzen-9-3950x-am4-360ghz-16-core-prozessor-11239808",
-      "fn": "return parseInt(document.querySelector('.productDetail strong').innerText.replace(/[^0-9]/g, ''), 10)",
+      "fn": "return parseInt(document.querySelector('meta[property=\"product:price:amount\"]').content, 10)",
       "interval": 60
     }
   ]
