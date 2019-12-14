@@ -1,15 +1,13 @@
-import { join } from 'path';
-import { AdapterConsole } from '@beobachter/adapter-console';
 import {
   Adapter,
-  Task,
   isBrowserTask,
   isHttpJsonTask,
-  BaseAdapter,
+  Task,
 } from '@beobachter/adapter';
+import { join } from 'path';
+import { createAdaptersFromConfig } from './create_adapters_from_config';
 import { runBrowserTasks } from './run_browser_task';
 import { runHttpJsonTasks } from './run_http-json_task';
-import { createAdaptersFromConfig } from './create_adapters_from_config';
 
 const config: {
   adapters: Adapter[];
