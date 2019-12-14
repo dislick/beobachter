@@ -10,7 +10,7 @@ export class AdapterConsole extends BaseAdapter<Options> {
   async record(task: Task, value: any) {
     const dateString = formatISO(new Date());
 
-    if (this.options.colors) {
+    if (this.options?.colors) {
       console.log(
         this.tag(dateString).grey,
         this.tag(task.name).cyan,

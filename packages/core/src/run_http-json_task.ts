@@ -1,10 +1,12 @@
-import { HttpJsonTask } from '@beobachter/adapter';
+import { HttpJsonTask, BaseAdapter } from '@beobachter/adapter';
 import { get } from 'lodash';
 import request from 'request-promise-native';
-import { adapters } from './main';
 import { waitForSeconds } from './utils/wait';
 
-export async function runHttpJsonTasks(tasks: HttpJsonTask[]) {
+export async function runHttpJsonTasks(
+  tasks: HttpJsonTask[],
+  adapters: BaseAdapter[]
+) {
   tasks.forEach(async task => {
     while (true) {
       try {

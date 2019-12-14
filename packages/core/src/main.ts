@@ -5,26 +5,25 @@ import {
   Task,
   isBrowserTask,
   isHttpJsonTask,
+  BaseAdapter,
 } from '@beobachter/adapter';
 import { runBrowserTasks } from './run_browser_task';
 import { runHttpJsonTasks } from './run_http-json_task';
+import { createAdaptersFromConfig } from './create_adapters_from_config';
 
 const config: {
-  adapters: any;
+  adapters: Adapter[];
   tasks: Task[];
 } = require(join(__dirname, '../config.json'));
 
-// TODO: Properly set up adapters
-export const adapters: Adapter[] = config.adapters.map((entry: any) => {
-  return new AdapterConsole(entry.options);
-});
-
 async function bootstrap() {
+  const adapters = createAdaptersFromConfig(config.adapters);
+
   const browserTasks = config.tasks.filter(isBrowserTask);
   const httpJsonTasks = config.tasks.filter(isHttpJsonTask);
 
-  runBrowserTasks(browserTasks);
-  runHttpJsonTasks(httpJsonTasks);
+  runBrowserTasks(browserTasks, adapters);
+  runHttpJsonTasks(httpJsonTasks, adapters);
 }
 
 bootstrap();

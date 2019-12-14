@@ -1,4 +1,4 @@
 export interface Adapter {
   name: string;
-  options?: object;
+  options?: any;
 }

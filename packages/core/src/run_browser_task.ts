@@ -1,10 +1,12 @@
 import puppeteer from 'puppeteer';
-import { adapters } from './main';
 import { scrapeWebsite } from './scrape_website';
 import { waitForSeconds } from './utils/wait';
-import { BrowserTask } from '@beobachter/adapter';
+import { BrowserTask, BaseAdapter } from '@beobachter/adapter';
 
-export async function runBrowserTasks(tasks: BrowserTask[]) {
+export async function runBrowserTasks(
+  tasks: BrowserTask[],
+  adapters: BaseAdapter[]
+) {
   const browser = await puppeteer.launch();
 
   tasks.forEach(async task => {
