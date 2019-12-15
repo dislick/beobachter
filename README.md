@@ -40,6 +40,7 @@ Adapters are required to record values. The following adapters are available/pla
 
 - `adapter-console` Logs to standard output. `[available]`
 - `adapter-influxdb` Stores values in InfluxDB. `[planned]`
+- `adapter-csv` Writes values to a CSV file. `[planned]`
 
 ### Configuration
 
