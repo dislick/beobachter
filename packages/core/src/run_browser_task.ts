@@ -9,6 +9,11 @@ export async function runBrowserTasks(
 ) {
   const browser = await puppeteer.launch();
 
+  // Make sure that browser properly closes on application exit.
+  process.on('exit', () => {
+    browser.close();
+  });
+
   tasks.forEach(async task => {
     while (true) {
       try {
