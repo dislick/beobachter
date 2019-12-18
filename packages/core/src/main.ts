@@ -6,8 +6,8 @@ import {
 } from '@beobachter/adapter';
 import { join } from 'path';
 import { createAdaptersFromConfig } from './create_adapters_from_config';
-import { runBrowserTasks } from './run_browser_task';
-import { runHttpJsonTasks } from './run_http-json_task';
+import { runBrowserTasks } from './run_browser_tasks';
+import { runHttpJsonTasks } from './run_http-json_tasks';
 
 const config: {
   adapters: Adapter[];
