@@ -1,7 +1,7 @@
-import puppeteer from 'puppeteer';
+import { Browser } from 'puppeteer';
 
 export async function scrapeWebsite<T>(
-  browser: puppeteer.Browser,
+  browser: Browser,
   url: string,
   fnString: string
 ): Promise<T> {
